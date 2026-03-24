@@ -18,7 +18,7 @@ interface IcpScoreFormProps {
 
 export default function IcpScoreForm({ prospect, onSubmit, onCancel }: IcpScoreFormProps) {
   const [scores, setScores] = useState<Record<string, number>>(
-    Object.fromEntries(CRITERIA.map(c => [c.key, (prospect as Record<string, unknown>)[c.key] as number || 5]))
+    Object.fromEntries(CRITERIA.map(c => [c.key, (prospect as unknown as Record<string, unknown>)[c.key] as number || 5]))
   );
 
   const handleSubmit = (e: React.FormEvent) => {

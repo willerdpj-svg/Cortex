@@ -1,5 +1,6 @@
 export interface Prospect {
   id: number;
+  user_id: string;
   company_name: string;
   company_type: 'Asset Manager' | 'Manco' | 'DFM' | 'Brokerage' | 'LISP' | 'Other';
   contact_name: string | null;
@@ -25,6 +26,7 @@ export interface Prospect {
 
 export interface Deal {
   id: number;
+  user_id: string;
   name: string;
   prospect_id: number;
   prospect_name?: string;
@@ -52,6 +54,7 @@ export interface StageHistoryEntry {
 
 export interface Activity {
   id: number;
+  user_id: string;
   type: string;
   prospect_id: number;
   prospect_name?: string;
@@ -64,6 +67,7 @@ export interface Activity {
 
 export interface Task {
   id: number;
+  user_id: string;
   title: string;
   prospect_id: number | null;
   prospect_name?: string;
@@ -71,7 +75,7 @@ export interface Task {
   due_date: string;
   priority: 'high' | 'medium' | 'low';
   notes: string | null;
-  completed: number;
+  completed: boolean;
   completed_at: string | null;
   created_at: string;
   updated_at: string;
